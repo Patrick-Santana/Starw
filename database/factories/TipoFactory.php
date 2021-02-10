@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Pokemon;
+use App\Models\Tipo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PokemonFactory extends Factory
+class TipoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Pokemon::class;
+    protected $model = Tipo::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,6 @@ class PokemonFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->word,
-            'descricao' => $this->faker->word,
             'type' => $this->faker->word,
         ];
     }

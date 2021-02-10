@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             TreinadorSeeder::class,
+            PokemonSeeder::class,
         ]);
     }
 }
