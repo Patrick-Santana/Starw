@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string("cep")->nullable();
-            $table->string("cpf")->unique();
+            $table->string("cpf")->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
