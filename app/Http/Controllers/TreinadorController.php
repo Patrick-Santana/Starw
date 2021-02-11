@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Treinador;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TreinadorController extends Controller
@@ -35,7 +36,13 @@ class TreinadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Treinador::create([
+            'nome' => $request->nome,
+            'ginasio'=> $request->ginasio,
+            'liga' => $request->liga,
+            'user_id' => Auth::user()->id,
+        ]);
+        return redirect('dashboard');
     }
 
     /**

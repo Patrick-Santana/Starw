@@ -16,5 +16,6 @@ class Treinador extends Model
         'nome',
         'ginasio',
         'liga',
+        'user_id',
     ];
 }
