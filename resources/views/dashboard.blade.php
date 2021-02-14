@@ -6,20 +6,24 @@
     </x-slot>
 
     <div class="py-12" x-data="{ add_modal: false }">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <div class ="p-3 m-0.5 border rounded-lg bg-purple-100 hover:bg-purple-300 cursor-pointer" @click="add_modal = true">
-                    Adicionar
-                    </div>
-                    @foreach($user->treinadors as $treinador)
-                        <div class= "p-1 bg-white border-b border-gray-200">
-                             {{ $treinador->nome }} Sou Treinador pokemon, sou do {{ $treinador->ginasio}}, 
-                             sou da liga {{ $treinador->liga}}
-                        </div>
-                    @endforeach
+    
+        <div class="max-w-7xl mx-auto grid grid-cols sm:px-6 lg:px-8">
+            <h1 class="block text-center text-xl py-3">Treinadores</h1>
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">    
+            <div>
+                <div>
+                        @include('treinadores')
                 </div>
             </div>
+                    
+
+
+            </div >
+                <div>
+                    <h1 class="block text-center text-xl py-3">Pokemons</h1>
+                    @include('pokemons')
+                </div>
+ 
             </div>
                 <div class="fixed z-10 inset-0 overflow-y-auto" x-show="add_modal" >
                 <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
