@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PokemonController;
 use App\Http\Controllers\TreinadorController;
+use App\Models\Pokemon;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +24,8 @@ Route::get('/', function () {
 Route::post('/treinadors/novo', [TreinadorController::class, 'store'])->name('add-treinador');
 
 Route::post('/pokemon/novo', [PokemonController::class, 'store'])->name('add-pokemon');
+Route::model('pokemon', Pokemon::class);
+Route::get('/pokemon/remover/{pokemon}', [PokemonController::class, 'destroy'])->name('rm-pokemon');
 
 
 /*Route::get('/dashboard', function () {

@@ -8,6 +8,11 @@
             <div class= "p-1 bg-white border-b border-gray-200">
                  {{ $pokemon ->nome }} 
             </div>
+            <div class="grid grid-cols-2 text-center">
+                <a class="bg-indigo-200 rounded-lg hover:bg-indigo-300" href="">Editar</a>
+                <a class="bg-red-200 rounded-lg hover:bg-red-300" href="{{route('rm-pokemon', $pokemon->id) }}">Excluir</a>
+
+            </div>
         @endforeach
     </div>
 

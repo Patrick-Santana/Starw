@@ -8,6 +8,7 @@
             <div class= "p-1 bg-white border-b border-gray-200">
                  {{ $treinador->nome }} Sou Treinador pokemon, sou do {{ $treinador->ginasio}}, 
                  sou da liga {{ $treinador->liga}}
+                 
             </div>
         @endforeach
     </div>
