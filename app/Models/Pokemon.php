@@ -16,5 +16,7 @@ class Pokemon extends Model
     protected $fillable = [
         'descricao',
         'nome',
+        'type',
+        'user_id',
     ];
 }

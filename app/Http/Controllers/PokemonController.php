@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pokemon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PokemonController extends Controller
@@ -35,7 +36,13 @@ class PokemonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pokemon::create([
+            'nome' => $request->nome,
+            'descricao'=> $request->descricao,
+            'type' => $request->type,
+            'user_id' => Auth::user()->id,
+        ]);
+        return redirect('dashboard');
     }
 
     /**
