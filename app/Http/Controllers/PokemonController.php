@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class PokemonController extends Controller
 {
+    public function list()
+    {
+        return auth()->user()->pokemon;
+    }
     /**
      * Display a listing of the resource.
      *

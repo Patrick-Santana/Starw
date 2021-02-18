@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class TreinadorController extends Controller
 {
+    public function list()
+    {
+        return auth()->user()->treinadors;
+    }
     /**
      * Display a listing of the resource.
      *
